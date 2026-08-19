@@ -180,6 +180,7 @@ PRODUCT=`realpath $MIRROR/product`
 SYSTEM_EXT=`realpath $MIRROR/system_ext`
 ODM=`realpath $MIRROR/odm`
 MY_PRODUCT=`realpath $MIRROR/my_product`
+APEX=`realpath $MIRROR/apex`
 
 # create
 mkdir -p $MODPATH/system/etc/vintf
@@ -1357,17 +1358,16 @@ MODSYSTEM=/system
 # unmount
 unmount_mirror
 
-
-
-
-
-
-
-
-
-
-
-
+# prepare
+PKG=com.motorola.dolby.dolbyui
+DIR=/storage/emulated/"$UID"/Android/data/$PKG/files
+DIR2=/storage/emulated/"$UID"/Android/data/$PKG/cache
+ui_print "- Creating directories:"
+ui_print "  $DIR"
+mkdir -p $DIR
+ui_print "  $DIR2"
+mkdir -p $DIR2
+ui_print " "
 
 
 
